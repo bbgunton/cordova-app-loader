@@ -25,6 +25,8 @@
   "author": "Mark Marijnissen",
   "license": "MIT",
   "dependencies": {
-    "cordova-file-cache": "^1.1.1"
+    "cordova-file-cache": "^1.1.1",
+    "cordova-promise-fs": "^1.1.1",
+    "promiscuous": "^0.6.0"
   }
 }

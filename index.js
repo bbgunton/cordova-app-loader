@@ -2,6 +2,8 @@ var CordovaFileCache = require('cordova-file-cache');
 var CordovaPromiseFS = require('cordova-promise-fs');
 var Promise = null;
 
+var BUNDLE_ROOT = '';
+/*
 var BUNDLE_ROOT = location.href.replace(location.hash,'');
 BUNDLE_ROOT = BUNDLE_ROOT.substr(0,BUNDLE_ROOT.lastIndexOf('/')+1);
 if(/ip(hone|ad|od)/i.test(navigator.userAgent)){
@@ -9,6 +11,7 @@ if(/ip(hone|ad|od)/i.test(navigator.userAgent)){
   BUNDLE_ROOT = BUNDLE_ROOT.substr(0,BUNDLE_ROOT.lastIndexOf('/')+1);
   BUNDLE_ROOT = 'cdvfile://localhost/bundle' + BUNDLE_ROOT;
 }
+*/
 
 function hash(files){
   var keys = Object.keys(files);
@@ -201,7 +204,7 @@ AppLoader.prototype.check = function(newManifest){
         if(changes > 0){
           // Save the new Manifest
           self.newManifest = newManifest;
-          self.newManifest.root = self.cache.localUrl;
+          self.newManifest.root = self.cache.localInternalURL;
           resolve(true);
         } else {
           resolve(false);
